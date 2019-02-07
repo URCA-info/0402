@@ -7,9 +7,12 @@
 <h1>Info0402 TP N°4 : tableau d'objets, polymorphisme, héritage
 et virtualité</h1>
 
-Le but de ce TP est d'obtenir une hiérarchie qui ressemble à ceci:<br /><div style="text-align: center;"><img style="width: 747px; height: 498px;" alt="Hierarchie1" src="tp04.png" /></div>
+<<<<<<< HEAD
+Le but de ce TP est d'obtenir une hiérarchie qui ressemble à ceci:<br /><div style="text-align: center;"><img style="width: 747px; height: 498px;" alt="Hierarchie1" src="tp06-1.png" /></div>
 
 
+=======
+>>>>>>> 38caa696c9f9c6293d45c83c1ede8d8421fea458
 <h2>Préambule: classe Curve</h2>
 De manière similaire à ce que l'on avait fait pour la classe Surface,
 on peut définir une classe Curve qui sert à représenter des courbes.
@@ -108,5 +111,9 @@ l'initialisation des champs/allocation <br />
 </table>
 </div>
 <span style="font-size: 10px;">Année
+<<<<<<< HEAD
 universitaire 2017-2018 : version du 4 février 2018.</span>
+=======
+universitaire 2018-2019 : version du 7 février 2019.</span>
+>>>>>>> 38caa696c9f9c6293d45c83c1ede8d8421fea458
 </body></html>
