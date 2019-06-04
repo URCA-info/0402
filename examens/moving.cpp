@@ -39,7 +39,7 @@ public:
 };
 
 // Q2: la seule chose qui eut être déplacé est la propriété d'un pointeur
-// pointant sur une zone de mémoire externe (le plus souvent privé) à la classe.
+// pointant sur une zone de mémoire externe (le plus souvent privée) à la classe.
 // Une valeur dans la mémoire peut seulement être copiée d'un endroit à un
 // autre.
 
