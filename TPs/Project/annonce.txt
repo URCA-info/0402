@@ -26,4 +26,6 @@ de list et de deque par un groupe soit identique.
 A défaut de réponse avant le 1er mars, un sujet vous sera
 attribué par défaut. La liste des attributions sera mise
 à jour au fur et à mesure dans sur le site github:
-https://github.com/URCA-info/0402
+https://github.com/URCA-info/0402/blob/master/TPs/Project/attribution.md
+
+pm

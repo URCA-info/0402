@@ -1,4 +1,4 @@
-# Projet info0402 
+# Projet info0402
 
 Il s'agit d'écrire une classe de conteneur similaire à celle de la STL (voir chapitre 8) avec l'ensemble des fonctionnalités indiquées, et de tester cette classe de manière intensive.
 
