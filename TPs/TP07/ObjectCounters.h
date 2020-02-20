@@ -5,10 +5,14 @@
 #define RED(x)       "\033[0;31m" x "\033[0m"
 #define IN_RED(x)    printf("\033[0;31m"); x printf("\033[0m");
 #define BOLDRED(x)   "\033[1;31m" x "\033[0m"
-#define GREEN(x)     "\033[0;32m" x "\033[0m"
+#define IN_GREEN(x)     "\033[0;32m" x "\033[0m"
 #define BOLDGREEN(x) "\033[0;32m" x "\033[0m"
 
 struct Counters {
+    // constructeur: iCD=par défaut, iCI=avec un entier, iCC=par copie, iCM=par déplacement
+    // assignation: iAC=par copie, iAM=par déplacement
+    // destructeur: iDD
+    // voir la classe A (dans classA.h pour voir l'utilisation des compteurs)
     int iCD{}, iCI{}, iCC{}, iCM{}, iAC{}, iAM{}, iDD{};
     Counters() = default;
     Counters(int cd, int ci, int cc, int cm, int ac, int am, int dd):
@@ -24,6 +28,7 @@ struct Counters {
     }
 };
 
+// affiche tous les compteurs différents de zéro
 void showNZ(const Counters& cnt) {
     if (cnt.iCD || cnt.iCI || cnt.iCC || cnt.iCM) {
         printf(" construct ( ");
@@ -62,7 +67,7 @@ static Counters CounterDiff(const Counters& state, const char *str=nullptr, cons
     showNZ(diff);
     if (ref != nullptr) {
         Counters err = *ref - diff;
-        if (err == Counters()) printf("%s",GREEN(" succès"));
+        if (err == Counters()) printf("%s",IN_GREEN(" succès"));
         else { IN_RED(printf("%s"," échec\n\t\t"); showNZ(err);) }
     }
     printf("\n");

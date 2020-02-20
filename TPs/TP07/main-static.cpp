@@ -1,3 +1,4 @@
+#include <ios>
 #include "Array.h"
 #include "classA.h"
 

@@ -8,13 +8,15 @@ private:
 public:
     A() { ++count.iCD; }
     A(int x) : a(x) { ++count.iCI; }
-    A(const A&) { ++count.iCC; }
-    A(A&&) { ++count.iCM; }
-    A& operator=(const A&x) {
-        if (this != &x) ++count.iAC;
+    A(const A& other) : a(other.a) { ++count.iCC; }
+    A(A&& other) : a(std::move(other.a)) { ++count.iCM; }
+    A& operator=(const A&other) {
+        a = other.a;
+        if (this != &other) ++count.iAC;
         return *this;
     }
-    A& operator=(A &&) {
+    A& operator=(A &&other) {
+        a = std::move(other.a);
         ++count.iAM;
         return *this;
     }
