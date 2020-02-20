@@ -63,7 +63,7 @@ Le projet doit être réalisé en binôme. Pour tout code partagé, les binômes
 
 La soutenance aura lieu lors de la semaine des examens. Un planning de soutenance sera mis en place environ une dizaine de jours avant. Le code et le rapport devront être placés 24h avant la soutenance. dans un dépot qui sera créé à cet effet sur [cours.univ-reims.fr](https://cours.univ-reims.fr/course/view.php?id=1664).  
 
-Lors de la soutenance, vous serez questionné sur le code remis. Aussi, si vous rendez un code qui n'est pas le votre, il vous sera impossible de répondre aux questions qui seront posées, ce qui conduira nécessairement à la note de 0.
+Lors de la soutenance, vous serez questionnés sur le code remis. Aussi, si vous rendez un code qui n'est pas le votre, il vous sera impossible de répondre aux questions, ce qui conduira nécessairement à la note de 0.
 
 Également, si vous utilisez des extraits de code donnés en TP, vous devez donc absolument comprendre leurs sens.
 
