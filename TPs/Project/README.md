@@ -1,4 +1,4 @@
-# Projet info0402 
+# Projet info0402
 
 Il s'agit d'écrire une classe de conteneur similaire à celle de la STL (voir chapitre 8) avec l'ensemble des fonctionnalités indiquées, et de tester cette classe de manière intensive.
 
@@ -36,7 +36,7 @@ sinon).
 
 Toutes les fonctions d'allocation devront obligatoirement utiliser les fonctions d'allocation du C++ (à savoir new et delete). Donc, malloc et free ne seront jamais, et à aucun endroit, utilisés dans le code rendu (y compris dans l'adaptation de la base en C que vous utilisez).
 
-Attention: dans le cas de list, l'ensemble des opérations (merge, splice, remove, remove_if, reverse, unique, sort) ne devront déplacer aucun élément de la liste; seuls les pointeurs seront mis à jour.
+Attention: dans le cas de list, l'ensemble des opérations spécifiques (merge, splice, remove, reverse) ne devront déplacer aucun élément de la liste; seuls les pointeurs seront mis à jour.
 
 ### Tests
 

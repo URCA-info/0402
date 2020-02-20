@@ -58,23 +58,10 @@ public:
 
     void merge( list& other );
     void merge( list&& other );
-    template <class Compare> void merge( list& other, Compare comp );
-    template <class Compare> void merge( list&& other, Compare comp );
-
     void splice(const_iterator pos, list& other);
     void splice(const_iterator pos, list&& other);
-    void splice(const_iterator pos, list& other, const_iterator it);
-    void splice(const_iterator pos, list&& other, const_iterator it);
-    void splice(const_iterator pos, list& other, const_iterator first, const_iterator last);
-    void splice(const_iterator pos, list&& other, const_iterator first, const_iterator last);
-
     void remove( const int& value );
-    template <class UnaryPredicate> void remove_if( UnaryPredicate p );
     void reverse();
-    void unique();
-    template<class BinaryPredicate> void unique( BinaryPredicate p );
-    void sort();
-    template<class Compare> void sort( Compare comp );
 
     friend bool operator==<>( list& lhs, list& rhs );
     friend bool operator!=<>( list& lhs, list& rhs );
