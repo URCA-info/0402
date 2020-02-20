@@ -2,9 +2,10 @@
 
 ### groupe S4F3A
 
-| Binômes (2/17)| Projet
+| Binômes (4/17)| Projet
 |---|---
 | ETTOUATI Thibault & BURETTE Quentin | set
+| ALVARO Luca & THEBAULT Antoine | map
 
 ### groupe S4F3B
 
@@ -13,8 +14,6 @@
 | Bryan HERVELIN | set
 | Keryl Thiry & BOULACHEB Yaniss | list
 | Samuel PEREZ & Tristan Véron | set
-
-
 
 ### groupe S4F4A
 
@@ -25,10 +24,12 @@
 
 ### groupe S4F4B
 
-| Binômes (2/6) | Projet
+| Binômes (3/6) | Projet
 |---|---
 | WENTZINGER Alexi | list
 | BRIFFOTEAUX Adélie & ETIENNE Emilie | list
+
+plus de projets list acceptés.
 
 ### groupe S4F5A
 
@@ -42,4 +43,4 @@
 |---|---
 | Morlet flavien | list
 
-Dernière mise à jour: 19 février 2020 - 19h.
+Dernière mise à jour: 20 février 2020 - 9h30.
