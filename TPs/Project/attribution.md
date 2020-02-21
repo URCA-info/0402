@@ -2,18 +2,21 @@
 
 ### groupe S4F3A
 
-| Binômes (4/17)| Projet
+| Binômes (6/17)| Projet
 |---|---
 | ETTOUATI Thibault & BURETTE Quentin | set
 | ALVARO Luca & THEBAULT Antoine | map
+| CORNEC Benjamin & Nathan CLAUSSE | map
 
 ### groupe S4F3B
 
-| Binômes (5/16) | Projet
+| Binômes (7/16) | Projet
 |---|---
 | Bryan HERVELIN | set
 | Keryl Thiry & BOULACHEB Yaniss | list
 | Samuel PEREZ & Tristan Véron | set
+| Frade Anthony | list
+| Théo Gerfaux | set
 
 ### groupe S4F4A
 
@@ -24,10 +27,12 @@
 
 ### groupe S4F4B
 
-| Binômes (3/6) | Projet
+| Binômes (7/6) | Projet
 |---|---
 | WENTZINGER Alexi | list
 | BRIFFOTEAUX Adélie & ETIENNE Emilie | list
+| VAN DE VOORDE Alexis & BAES Louis | deque
+| Moreaux Léo & Silva Alexandre (F4A) | set
 
 plus de projets list acceptés.
 
