@@ -2,11 +2,12 @@
 
 ### groupe S4F3A
 
-| Binômes (6/17)| Projet
+| Binômes (7/17)| Projet
 |---|---
 | ETTOUATI Thibault & BURETTE Quentin | set
 | ALVARO Luca & THEBAULT Antoine | map
 | CORNEC Benjamin & Nathan CLAUSSE | map
+| GNAGNE James | map
 
 ### groupe S4F3B
 
@@ -20,10 +21,11 @@
 
 ### groupe S4F4A
 
-| Binômes (2/14) | Projet
+| Binômes (4/14) | Projet
 |---|---
 | BELKOLLI Khalil | deque
 | Randriamanantena Kenny Michael | set
+| BOURGA Camille & LAROCHE | map
 
 ### groupe S4F4B
 
