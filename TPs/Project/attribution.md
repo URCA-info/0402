@@ -11,13 +11,14 @@
 
 ### groupe S4F3B
 
-| Binômes (7/16) | Projet
+| Binômes (9/16) | Projet
 |---|---
 | Bryan HERVELIN | set
 | Keryl Thiry & BOULACHEB Yaniss | list
 | Samuel PEREZ & Tristan Véron | set
 | Frade Anthony | list
 | Théo Gerfaux | set
+| Herrscher Célien & Illourmane Mahmoud | list
 
 ### groupe S4F4A
 
@@ -40,14 +41,16 @@ plus de projets list acceptés.
 
 ### groupe S4F5A
 
-| Binômes (2/15) | Projet
+| Binômes (4/15) | Projet
 |---|---
 | Nicolas MACZYTA & TONNELLE Nathan | set
+| Sofiane MEDDOURi & Léo VANSCOOR | deque
 
 ### groupe S4F5AB
 
-| Binômes (1/15) | Projet
+| Binômes (3/15) | Projet
 |---|---
 | Morlet flavien | list
+| MIGUEL Théo & JAMIN Maël | list
 
-Dernière mise à jour: 21 février 2020 - 11h30.
+Dernière mise à jour: 27 février 2020 - 17h00.
