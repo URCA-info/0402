@@ -9,6 +9,7 @@ template <class T> deque {
 public:
     // ne pas toucher
     using value_type = T;
+    using size_type = size_t;
 
     // à implémenter
     deque();

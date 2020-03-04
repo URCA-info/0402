@@ -33,7 +33,7 @@ public:
 
     iterator erase( iterator pos );
     void erase( iterator first, iterator last );
-    size_type erase( const key_type& key )
+    size_t erase( const key_type& key )
 
     void swap( set& other );
 
