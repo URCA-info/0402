@@ -21,6 +21,7 @@
 | Théo Gerfaux | set
 | Herrscher Célien & Illourmane Mahmoud | list
 | Tristan BLOT & Théo LELONG | set
+| **CATHE Juliette** | map
 
 ### groupe S4F4A
 
@@ -48,6 +49,12 @@ plus de projets list acceptés.
 | Nicolas MACZYTA & TONNELLE Nathan | set
 | Sofiane MEDDOURi & Léo VANSCOOR | deque
 | RACOILLET Maxime & YAVUZ Mustafa | map
+| **CHAUVIERE & SARAZIN** | list
+| **LHEUREUX & PION** | list
+| **MOULIN & KALBE Tom (S3F5B)** | deque
+| **POYER & HAMIDI** | deque
+| **REICHART & LAIGRE (S4F5B)** | map
+| **QUINET** | list 
 
 ### groupe S4F5B
 
