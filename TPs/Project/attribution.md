@@ -40,7 +40,7 @@ DA SILVA avec MOREAUX (S4F4B)
 
 ### groupe S4F4B
 
-| Binômes (7/6) | Projet
+| Binômes (6/6) | Projet
 |---|---
 | WENTZINGER Alexi | list
 | BRIFFOTEAUX Adélie & ETIENNE Emilie | list
@@ -51,7 +51,7 @@ plus de projets list acceptés.
 
 ### groupe S4F5A
 
-| Binômes (6/15) | Projet
+| Binômes (15/15) | Projet
 |---|---
 | Nicolas MACZYTA & TONNELLE Nathan | set
 | Sofiane MEDDOURi & Léo VANSCOOR | deque
@@ -65,9 +65,9 @@ plus de projets list acceptés.
 
 ### groupe S4F5B
 
-| Binômes (3/15) | Projet
+| Binômes (5/15) | Projet
 |---|---
 | Morlet flavien | list
-| MIGUEL Théo & JAMIN Maël | list
+| MIGUEL Théo & JAMIN Maël | deque
 
 Dernière mise à jour: 1er mars 2020 - 22h00.
