@@ -25,11 +25,18 @@
 
 ### groupe S4F4A
 
-| Binômes (4/14) | Projet
+| Binômes (14/14) | Projet
 |---|---
 | BELKOLLI Khalil | deque
-| Randriamanantena Kenny Michael | set
+| Randriamanantena Kenny Michael & CONTAL Lucie | set
 | BOURGA Camille & LAROCHE | map
+| **ALGHOUL Basel** | list
+| **BERTERMES & DIART** | map
+| **FOUQUE & THEODORE** | set
+| **OURDOUILLE & WACHET** | deque
+| **HANSEN & SERRANO** | list
+
+DA SILVA avec MOREAUX (S4F4B)
 
 ### groupe S4F4B
 
@@ -38,7 +45,7 @@
 | WENTZINGER Alexi | list
 | BRIFFOTEAUX Adélie & ETIENNE Emilie | list
 | VAN DE VOORDE Alexis & BAES Louis | deque
-| Moreaux Léo & Silva Alexandre (F4A) | set
+| Moreaux Léo & Silva Alexandre (S4F4A) | set
 
 plus de projets list acceptés.
 
@@ -54,7 +61,7 @@ plus de projets list acceptés.
 | **MOULIN & KALBE Tom (S3F5B)** | deque
 | **POYER & HAMIDI** | deque
 | **REICHART & LAIGRE (S4F5B)** | map
-| **QUINET** | list 
+| **QUINET** | list
 
 ### groupe S4F5B
 
