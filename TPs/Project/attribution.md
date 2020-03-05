@@ -73,7 +73,7 @@
 | **REICHART & LAIGRE (S4F5B)** | map
 | **QUINET** | list
 
-**MIA:** RAJASEKARAM, RENAUT
+**MIA:** RENAUT
 
 ### groupe S4F5B
 
@@ -86,6 +86,7 @@
 | **BEREZOWSKI & JOUAOUDI** | deque
 | **VILLA & SALACH** | list
 | **RAPINE** | map
+| **RAJASEKARAM** | list
 
 **transfuge:** MACZYTA vers S4F5A, KALBE vers S4F5A
 
