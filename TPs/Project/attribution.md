@@ -2,26 +2,36 @@
 
 ### groupe S4F3A
 
-| Binômes (9/17)| Projet
+| Binômes (16/17)| Projet
 |---|---
 | ETTOUATI Thibault & BURETTE Quentin | set
 | ALVARO Luca & THEBAULT Antoine | map
 | CORNEC Benjamin & Nathan CLAUSSE | map
 | GNAGNE James | map
 | CHARLIER Kevin & BERTIN Samuel | set
+| **BOISSIER & BRUNET** | deque
+| **BOUDRA & CAILLEAUX** | deque
+| **CAUTY & REIS-GRACIO** | list
+| **ELREFAE** | list
+
+**MIA:** NODARI
 
 ### groupe S4F3B
 
-| Binômes (13/16) | Projet
+| Binômes (14/16) | Projet
 |---|---
 | Bryan HERVELIN | set
-| Keryl Thiry & BOULACHEB Yaniss | list
+| THIRY Keryl & BOULACHEB Yaniss | list
 | Samuel PEREZ & Tristan Véron | set
 | Frade Anthony | list
 | Théo Gerfaux | set
 | Herrscher Célien & Illourmane Mahmoud | list
 | Tristan BLOT & Théo LELONG | set
 | **CATHE Juliette** | map
+| **EMERY** | deque
+| **HAIDARE** | deque
+
+**MIA:** GAUTRON, HANCE
 
 ### groupe S4F4A
 
@@ -36,7 +46,7 @@
 | **OURDOUILLE & WACHET** | deque
 | **HANSEN & SERRANO** | list
 
-DA SILVA avec MOREAUX (S4F4B)
+**transfuge:** DA SILVA avec MOREAUX (S4F4B)
 
 ### groupe S4F4B
 
@@ -47,27 +57,36 @@ DA SILVA avec MOREAUX (S4F4B)
 | VAN DE VOORDE Alexis & BAES Louis | deque
 | Moreaux Léo & Silva Alexandre (S4F4A) | set
 
-plus de projets list acceptés.
+**transfuge:** CHAUVIERE avec SARAZIN (S4F5A)
 
 ### groupe S4F5A
 
 | Binômes (15/15) | Projet
 |---|---
-| Nicolas MACZYTA & TONNELLE Nathan | set
-| Sofiane MEDDOURi & Léo VANSCOOR | deque
+| Nicolas MACZYTA (S4F5B) & TONNELLE Nathan | set
+| Sofiane MEDDOURI & Léo VANSCOOR | deque
 | RACOILLET Maxime & YAVUZ Mustafa | map
-| **CHAUVIERE & SARAZIN** | list
+| **CHAUVIERE (S4F4B) & SARAZIN** | list
 | **LHEUREUX & PION** | list
-| **MOULIN & KALBE Tom (S3F5B)** | deque
+| **MOULIN & KALBE Tom (S4F5B)** | deque
 | **POYER & HAMIDI** | deque
 | **REICHART & LAIGRE (S4F5B)** | map
 | **QUINET** | list
 
+**MIA:** RAJASEKARAM, RENAUT
+
 ### groupe S4F5B
 
-| Binômes (5/15) | Projet
+| Binômes (11/15) | Projet
 |---|---
 | Morlet flavien | list
 | MIGUEL Théo & JAMIN Maël | deque
+| **GIRARD & POULAIN** | set
+| **DEGOUDEZ & PAGE** | set
+| **BEREZOWSKI & JOUAOUDI** | deque
+| **VILLA & SALACH** | list
+| **RAPINE** | map
+
+**transfuge:** MACZYTA vers S4F5A, KALBE vers S4F5A
 
 Dernière mise à jour: 1er mars 2020 - 22h00.
