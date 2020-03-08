@@ -72,8 +72,7 @@
 | **POYER & HAMIDI** | deque
 | **REICHART & LAIGRE (S4F5B)** | map
 | **QUINET** | list
-
-**MIA:** RENAUT
+| **RENAUT** | list
 
 ### groupe S4F5B
 
@@ -84,10 +83,10 @@
 | **GIRARD & POULAIN** | set
 | **DEGOUDEZ & PAGE** | set
 | **BEREZOWSKI & JOUAOUDI** | deque
-| **VILLA & SALACH** | list
+| **VILLA & SALACH** | map
 | **RAPINE** | map
 | **RAJASEKARAM** | list
 
 **transfuge:** MACZYTA vers S4F5A, KALBE vers S4F5A
 
-Dernière mise à jour: 1er mars 2020 - 22h00.
+Dernière mise à jour: 8er mars 2020 - 18h00.
