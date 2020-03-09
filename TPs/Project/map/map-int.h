@@ -1,16 +1,20 @@
-#ifndef C_MAP_H
-#define C_MAP_H
+#ifndef C_MAP_INT_H
+#define C_MAP_INT_H
+#include <functional>
+#include <initializer_list>
 
 class map {
 public:
     // pour l'exemple
     using Key = int;
     using T = int;
+    class iterator;
+    class const_iterator;
 
     // ne pas toucher
     using key_type = Key;
     using mapped_type = T;
-    using value_type = std::pair<const Key, Y>;
+    using value_type = std::pair<const Key, T>;
     using key_compare = std::less<Key>;
 
     // à implémenter

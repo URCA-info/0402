@@ -1,5 +1,5 @@
-#ifndef C_SET_H
-#define C_SET_H
+#ifndef C_SET_INT_H
+#define C_SET_INT_H
 #include <functional>
 #include <initializer_list>
 

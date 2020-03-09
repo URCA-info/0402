@@ -1,8 +1,14 @@
+#ifndef C_LIST_INT_H
+#define C_LIST_INT_H
+#include <functional>
+#include <initializer_list>
 
 class list {
 public:
     // ne pas toucher
     using value_type = int;
+    class iterator;
+    class const_iterator;
 
     // à implémenter
     list(); //
@@ -63,12 +69,12 @@ public:
     void remove( const int& value );
     void reverse();
 
-    friend bool operator==<>( list& lhs, list& rhs );
-    friend bool operator!=<>( list& lhs, list& rhs );
-    friend bool operator< <>( list& lhs, list& rhs );
-    friend bool operator<=<>( list& lhs, list& rhs );
-    friend bool operator> <>( list& lhs, list& rhs );
-    friend bool operator>=<>( list& lhs, list& rhs );
+    friend bool operator==( list& lhs, list& rhs );
+    friend bool operator!=( list& lhs, list& rhs );
+    friend bool operator< ( list& lhs, list& rhs );
+    friend bool operator<=( list& lhs, list& rhs );
+    friend bool operator> ( list& lhs, list& rhs );
+    friend bool operator>=( list& lhs, list& rhs );
 
     void swap( list& other );
 
@@ -115,3 +121,5 @@ public:
 };
 
 void swap( list &lhs, list &rhs );
+
+#endif

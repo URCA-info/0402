@@ -1,15 +1,15 @@
-//
-// Created by pascal on 2/3/20.
-//
-
-#ifndef C_DEQUE_H
-#define C_DEQUE_H
+#ifndef C_DEQUE_INT_H
+#define C_DEQUE_INT_H
+#include <functional>
+#include <initializer_list>
 
 class deque {
 public:
     // ne pas toucher
     using value_type = int;
     using size_type = size_t;
+    class iterator;
+    class const_iterator;
 
     // à implémenter
     deque();
