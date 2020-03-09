@@ -1,10 +1,13 @@
 #ifndef C_SET_H
 #define C_SET_H
+#include <functional>
+#include <initializer_list>
 
 class set {
 public:
     // ne pas toucher
     using Compare = std::less<int>;
+    class iterator;
 
     // prototype
     set();
@@ -13,7 +16,7 @@ public:
     template< class InputIt > set( InputIt first, InputIt last, const Compare& comp = Compare());
     set( const set& other );
     set( set&& other );
-    set( std::initializer_list<int> init )
+    set( std::initializer_list<int> init );
     set( std::initializer_list<int> init, const Compare& comp = Compare());
 
     ~set();
@@ -37,7 +40,7 @@ public:
 
     iterator erase( iterator pos );
     void erase( iterator first, iterator last );
-    size_t erase( const key_type& key )
+    size_t erase( const int& key );
 
     void swap( set& other );
 
