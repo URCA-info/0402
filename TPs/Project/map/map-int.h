@@ -3,11 +3,15 @@
 
 class map {
 public:
+    // pour l'exemple
+    using Key = int;
+    using T = int;
+
     // ne pas toucher
     using key_type = Key;
-    using mapped_type = int;
-    using value_type = std::pair<const int, int>;
-    using key_compare = std::less<int>;
+    using mapped_type = T;
+    using value_type = std::pair<const Key, Y>;
+    using key_compare = std::less<Key>;
 
     // à implémenter
     map();
@@ -19,13 +23,13 @@ public:
 
     map& operator=( const map& other );
     map& operator=( map&& other );
-    map& operator=( std::initializer_list<int> ilist );
+    map& operator=( std::initializer_list<value_type> ilist );
 
-    int& at( const Key& key );
-    const int& at( const Key& key ) const;
+    mapped_type& at( const Key& key );
+    const mapped_type& at( const Key& key ) const;
 
-    int& operator[]( const Key& key );
-    int& operator[]( Key&& key );
+    mapped_type& operator[]( const Key& key );
+    mapped_type& operator[]( Key&& key );
 
     bool empty() const;
 
@@ -33,13 +37,13 @@ public:
 
     void clear();
 
-    std::pair<iterator,bool> insert( const int& value );
-    std::pair<iterator,bool> insert( int&& value );
-    iterator insert( iterator hint, const int& value );
-    iterator insert( iterator hint, int&& value );
+    std::pair<iterator,bool> insert( const value_type& value );
+    std::pair<iterator,bool> insert( value_type&& value );
+    iterator insert( iterator hint, const value_type& value );
+    iterator insert( iterator hint, value_type&& value );
     template< class InputIt > void insert( InputIt first, InputIt last );
-    void insert( std::initializer_list<int> ilist );
-    
+    void insert( std::initializer_list<value_type> ilist );
+
     void erase( iterator pos );
     void erase( iterator first, iterator last );
     size_t erase( const key_type& key );
@@ -72,7 +76,7 @@ public:
         iterator operator++(int);
         bool operator==(iterator other) const;
         bool operator!=(iterator other) const;
-        int& operator*() const;
+        value_type& operator*() const;
         //// birectionnel
         // iterator& operator--();
         // iterator operator--(int);

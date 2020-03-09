@@ -1,8 +1,12 @@
 #ifndef C_SET_H
 #define C_SET_H
 
-template<class Key,class Compare = std::less<Key>> class set {
+class set {
 public:
+    // ne pas toucher
+    using Compare = std::less<int>;
+
+    // prototype
     set();
     explicit set( const Compare& comp );
     template< class InputIt > set( InputIt first, InputIt last);
@@ -23,10 +27,10 @@ public:
 
     void clear();
 
-    std::pair<iterator,bool> insert( const value_type& value );
-    std::pair<iterator,bool> insert( value_type&& value );
-    iterator insert( iterator hint, const value_type& value );
-    iterator insert( iterator hint, value_type&& value );
+    std::pair<iterator,bool> insert( const int& value );
+    std::pair<iterator,bool> insert( int&& value );
+    iterator insert( iterator hint, const int& value );
+    iterator insert( iterator hint, int&& value );
     template< class InputIt > void insert( InputIt first, InputIt last );
     void insert( std::initializer_list<int> ilist );
 
@@ -37,15 +41,15 @@ public:
 
     void swap( set& other );
 
-    size_t count( const Key& key ) const;
+    size_t count( const int& key ) const;
 
-    iterator find( const Key& key );
+    iterator find( const int& key );
 
-    bool contains( const Key& key ) const;
+    bool contains( const int& key ) const;
 
-    std::pair<iterator,iterator> equal_range( const Key& key );
-    iterator lower_bound( const Key& key );
-    iterator upper_bound( const Key& key );
+    std::pair<iterator,iterator> equal_range( const int& key );
+    iterator lower_bound( const int& key );
+    iterator upper_bound( const int& key );
 
     friend bool operator==( const set& lhs, const set& rhs );
     friend bool operator!=( const set& lhs, const set& rhs );
