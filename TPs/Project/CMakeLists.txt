@@ -1,0 +1,8 @@
+cmake_minimum_required(VERSION 3.15)
+project(TPs)
+set(CMAKE_CXX_STANDARD 20)
+add_subdirectory(list)
+add_subdirectory(deque)
+add_subdirectory(set)
+add_subdirectory(map)
+add_subdirectory(catch)

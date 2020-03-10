@@ -6,120 +6,136 @@
 class list {
 public:
     // ne pas toucher
-    using value_type = int;
+    using T = int;
+    using value_type = T;
     class iterator;
     class const_iterator;
+    static int dummy;  // pour renvoyer une lvalue lorsque demandé
 
     // à implémenter
-    list(); //
+    list() {}
 
-    explicit list(size_t count);            //
-    list(size_t count, const int& value );    //
+    explicit list(size_t count) {}
+    list(size_t count, const T& value ) {}
 
-    template<typename InputIt > list( InputIt first, InputIt last);
+    template<typename InputIt > list( InputIt first, InputIt last) {}
 
-    list( const list& other );  //
-    list( list&& other );       //
+    list( const list& other ) {}
+    list( list&& other ) {}
 
-    list( std::initializer_list<int> init );
+    list( std::initializer_list<T> init ) {}
 
-    ~list();
+    ~list() {}
 
-    list& operator=( const list& other );   //
-    list& operator=( list&& other );        //
+    list& operator=( const list& other ) { return *this; }
+    list& operator=( list&& other ) { return *this; }
 
-    void assign( size_t count, const int& value );   //
-    template<typename InputIt > void assign( InputIt first, InputIt last );  //
+    void assign( size_t count, const T& value ) {}
+    template<typename InputIt > void assign( InputIt first, InputIt last ) {}
 
-    int& front();     //
-    int& back();      //
+    T& front() { return dummy; }
+    T& back() { return dummy; }
 
-    const int& back() const;  //
-    const int& front() const; //
+    const T& back() const { return dummy; }
+    const T& front() const { return dummy; }
 
-    bool empty() const;     //
-    size_t size() const;    //
-    void clear();           //
+    bool empty() const { return true; }
+    size_t size() const { return 0; }
+    void clear() {}
 
-    iterator insert( const_iterator pos, const int& value );  //
-    iterator insert( const_iterator pos, int&& value );
-    iterator insert( const_iterator pos, size_t count, const int& value );           //
-    template< class InputIt > iterator insert( const_iterator pos, InputIt first, InputIt last );  //
-    iterator insert( const_iterator pos, std::initializer_list<int> ilist );
 
-    iterator erase( const_iterator pos );
-    iterator erase( const_iterator first, const_iterator last );
+    void resize( size_t count ) {}
+    void resize( size_t count, const T& value) {}
 
-    void resize( size_t count );                    //
-    void resize( size_t count, const int& value);     //
+    void push_back( const T& value ) {}
+    void push_front( const T& value ) {}
 
-    void push_back( const int& value );     //
-    void push_front( const int& value );    //
+    void push_back( T&& value ) {}
+    void push_front( T&& value ) {}
 
-    void push_back( int&& value );          //
-    void push_front( int&& value );         //
+    void pop_back() {}
+    void pop_front() {}
 
-    void pop_back();    //
-    void pop_front();   //
+    void merge( list& other ) {}
+    void merge( list&& other ) {}
+    void remove( const T& value ) {}
+    void reverse() {}
 
-    void merge( list& other );
-    void merge( list&& other );
-    void splice(const_iterator pos, list& other);
-    void splice(const_iterator pos, list&& other);
-    void remove( const int& value );
-    void reverse();
+    friend bool operator==( list& lhs, list& rhs ) { return false; }
+    friend bool operator!=( list& lhs, list& rhs ) { return false; }
+    friend bool operator< ( list& lhs, list& rhs ) { return false; }
+    friend bool operator<=( list& lhs, list& rhs ) { return false; }
+    friend bool operator> ( list& lhs, list& rhs ) { return false; }
+    friend bool operator>=( list& lhs, list& rhs ) { return false; }
 
-    friend bool operator==( list& lhs, list& rhs );
-    friend bool operator!=( list& lhs, list& rhs );
-    friend bool operator< ( list& lhs, list& rhs );
-    friend bool operator<=( list& lhs, list& rhs );
-    friend bool operator> ( list& lhs, list& rhs );
-    friend bool operator>=( list& lhs, list& rhs );
+    void swap( list& other ) {}
 
-    void swap( list& other );
-
+    // iterateur classique
     class iterator {
     public:
-        explicit iterator();
-        iterator(const iterator&);
-        iterator& operator++();
-        iterator operator++(int);
-        bool operator==(iterator other) const;
-        bool operator!=(iterator other) const;
-        int& operator*() const;
+        explicit iterator() {}
+        iterator(const iterator&) {}
+        iterator& operator++() { return *this; }
+        iterator operator++(int) { return *this; }
+        bool operator==(iterator other) const { return false; }
+        bool operator!=(iterator other) const { return false; }
+        T& operator*() const { return dummy; };
         //// birectionnel
         // iterator& operator--();
         // iterator operator--(int);
-        //// random access
-        // bool operator<(const iterator&)  const;
-        // bool operator<=(const iterator&) const;
-        // bool operator>(const iterator&)  const;
-        // bool operator>=(const iterator&) const;
-        // iterator& operator+=(const int n)
-        // iterator& operator-=(const int n)
-        // int& operator[](int n);
-        // const int& operator[](int n) const;
     };
-    iterator begin();  //
-    iterator end();    //
+    iterator begin() { return iterator(); }
+    iterator end() { return iterator(); }
 
-    class const_iterator {};
-    const_iterator begin() const;
-    const_iterator end() const;
-    const_iterator cbegin() const;
-    const_iterator cend() const;
+    // iterateur constant
+    class const_iterator {
+    public:
+        explicit const_iterator() {}
+        const_iterator(const const_iterator&) {}
+        const_iterator(const iterator&) {}
+        const_iterator& operator++() { return *this; }
+        const_iterator operator++(int) { return *this; }
+        bool operator==(const_iterator other) const { return false; }
+        bool operator!=(const_iterator other) const { return false; }
+        const T& operator*() const { return dummy; };
+        //// birectionnel
+        // iterator& operator--();
+        // iterator operator--(int);
+    };
+    const_iterator cbegin() { return const_iterator(); }
+    const_iterator cend() { return const_iterator(); }
+    const_iterator begin() const { return const_iterator(); }
+    const_iterator end() const { return const_iterator(); }
 
-    class reverse_iterator {};
-    reverse_iterator rbegin(); //
-    reverse_iterator rend();   //
+    // méthode utilisant les itérateurs sur une liste
+    iterator insert( const_iterator pos, const T& value ) { return iterator(); }
+    iterator insert( const_iterator pos, T&& value ) { return iterator(); }
+    iterator insert( const_iterator pos, size_t count, const T& value ) { return iterator(); }
+    template< class InputIt > iterator insert( const_iterator pos, InputIt first, InputIt last ) { return iterator(); }
+    iterator insert( const_iterator pos, std::initializer_list<T> ilist ) { return iterator(); }
 
-    class const_reverse_iterator {};
-    const_reverse_iterator rbegin() const;
-    const_reverse_iterator rend() const;
-    const_reverse_iterator crbegin() const;
-    const_reverse_iterator crend() const;
+    iterator erase( const_iterator pos ) { return iterator(); }
+    iterator erase( const_iterator first, const_iterator last ) { return iterator(); }
+
+    void splice(const_iterator pos, list& other) {}
+    void splice(const_iterator pos, list&& other) {}
+
+    /* autres itérateurs
+    class reverse_iterator {} {}
+    reverse_iterator rbegin() {}
+    reverse_iterator rend() {}
+
+    class const_reverse_iterator {} {}
+    const_reverse_iterator rbegin() const {}
+    const_reverse_iterator rend() const {}
+    const_reverse_iterator crbegin() const {}
+    const_reverse_iterator crend() const {}
+     */
 };
 
-void swap( list &lhs, list &rhs );
+void swap( list &lhs, list &rhs ) {};
+
+// afin de pouvoir renvoyer une référence vers un entier dans le code à remplacer
+int list::dummy = 0;
 
 #endif

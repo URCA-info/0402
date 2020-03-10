@@ -6,122 +6,156 @@
 class deque {
 public:
     // ne pas toucher
+    using T = int;
     using value_type = int;
     using size_type = size_t;
-    class iterator;
-    class const_iterator;
+    static int dummy;  // pour renvoyer une lvalue lorsque demandé
 
     // à implémenter
-    deque();
-    explicit deque( size_type count );
-    deque( size_type count, const int& value );
-    template< class InputIt > deque( InputIt first, InputIt last);
-    deque( const deque& other );
-    deque( deque&& other );
-    deque( std::initializer_list<int> init );
-    ~deque();
+    deque() {}
+    explicit deque( size_type count ) {}
+    deque( size_type count, const T& value ) {}
+    template< class InputIt > deque( InputIt first, InputIt last) {}
+    deque( const deque& other ) {}
+    deque( deque&& other ) {}
+    deque( std::initializer_list<T> init ) {}
+    ~deque() {}
 
-    deque& operator=( const deque& other );
-    deque& operator=( deque&& other );
-    deque& operator=( std::initializer_list<int> ilist );
+    deque& operator=( const deque& other ) { return *this; }
+    deque& operator=( deque&& other ) { return *this; }
+    deque& operator=( std::initializer_list<T> ilist ) { return *this; }
 
-    void assign( size_type count, const int& value );
-    template< class InputIt > void assign( InputIt first, InputIt last );
-    void assign( std::initializer_list<int> ilist );
+    void assign( size_type count, const T& value ) {}
+    template< class InputIt > void assign( InputIt first, InputIt last ) {}
+    void assign( std::initializer_list<T> ilist ) {}
 
-    int& at( size_type pos );
-    const int& at( size_type pos ) const;
+    T& at( size_type pos ) { return dummy; }
+    const T& at( size_type pos ) const { return dummy; }
 
-    int& operator[]( size_type pos );
-    const int& operator[]( size_type pos ) const;
+    T& operator[]( size_type pos ) { return dummy; }
+    const T& operator[]( size_type pos ) const { return dummy; }
 
-    int& front();
-    const int& front() const;
+    T& front() { return dummy; }
+    const T& front() const { return dummy; }
 
-    int& back();
-    const int& back() const;
+    T& back() { return dummy; }
+    const T& back() const { return dummy; }
 
-    bool empty() const;
+    bool empty() const { return false; }
 
-    size_t size() const;
+    size_t size() const { return 0; }
 
-    void clear();
+    void clear() {}
 
-    iterator insert( iterator pos, const int& value );
-    iterator insert( iterator pos, int&& value );
-    void insert( iterator pos, size_type count, const int& value );
-    template< class InputIt > void insert( iterator pos, InputIt first, InputIt last);
-    iterator insert( const_iterator pos, std::initializer_list<int> ilist );
 
-    iterator erase( iterator pos );
-    iterator erase( iterator first, iterator last );
+    void push_back( const T& value ) {}
+    void push_back( T&& value ) {}
 
-    void push_back( const int& value );
-    void push_back( int&& value );
+    template< class... Args > void emplace_back( Args&&... args ) {}
 
-    void pop_back();
+    void pop_back() {}
 
-    void push_front( const int& value );
-    void push_front( int&& value );
+    void push_front( const T& value ) {}
+    void push_front( T&& value ) {}
 
-    void pop_front();
+    template< class... Args > void emplace_front( Args&&... args ) {}
 
-    void resize( size_type count );
-    void resize( size_type count, const value_type& value );
+    void pop_front() {}
 
-    void swap( deque& other );
+    void resize( size_type count ) {}
+    void resize( size_type count, const value_type& value ) {}
 
-    friend bool operator==( const deque& lhs, const deque& rhs );
-    friend bool operator!=( const deque& lhs, const deque& rhs );
-    friend bool operator<(  const deque& lhs, const deque& rhs );
-    friend bool operator<=( const deque& lhs, const deque& rhs );
-    friend bool operator>(  const deque& lhs, const deque& rhs );
-    friend bool operator>=( const deque& lhs, const deque& rhs );
+    void swap( deque& other ) {}
 
-        class iterator {
-        public:
-            explicit iterator();
-            iterator(const iterator&);
-            iterator& operator++();
-            iterator operator++(int);
-            bool operator==(iterator other) const;
-            bool operator!=(iterator other) const;
-            int& operator*() const;
-            //// birectionnel
-            // iterator& operator--();
-            // iterator operator--(int);
-            //// random access
-            // bool operator<(const iterator&)  const;
-            // bool operator<=(const iterator&) const;
-            // bool operator>(const iterator&)  const;
-            // bool operator>=(const iterator&) const;
-            // iterator& operator+=(const int n)
-            // iterator& operator-=(const int n)
-            // int& operator[](int n);
-            // const int& operator[](int n) const;
-        };
-        iterator begin();  //
-        iterator end();    //
+    friend bool operator==( const deque& lhs, const deque& rhs ) { return true; }
+    friend bool operator!=( const deque& lhs, const deque& rhs ) { return true; }
+    friend bool operator<(  const deque& lhs, const deque& rhs ) { return true; }
+    friend bool operator<=( const deque& lhs, const deque& rhs ) { return true; }
+    friend bool operator>(  const deque& lhs, const deque& rhs ) { return true; }
+    friend bool operator>=( const deque& lhs, const deque& rhs ) { return true; }
 
-        class const_iterator {};
-        const_iterator begin() const;
-        const_iterator end() const;
-        const_iterator cbegin() const;
-        const_iterator cend() const;
+    // iterateur classique
+    class iterator {
+    public:
+        explicit iterator() {}
+        iterator(const iterator&) {}
+        iterator& operator++() { return *this; }
+        iterator operator++(int) { return *this; }
+        bool operator==(iterator other) const { return false; }
+        bool operator!=(iterator other) const { return false; }
+        T& operator*() const { return dummy; };
+        //// birectionnel
+        // iterator& operator--();
+        // iterator operator--(int);
+        //// random access
+        // bool operator<(const iterator&)  const;
+        // bool operator<=(const iterator&) const;
+        // bool operator>(const iterator&)  const;
+        // bool operator>=(const iterator&) const;
+        // iterator& operator+=(const int n)
+        // iterator& operator-=(const int n)
+        // int& operator[](int n);
+        // const int& operator[](int n) const;
+    };
+    iterator begin() { return iterator(); }
+    iterator end() { return iterator(); }
 
-        class reverse_iterator {};
-        reverse_iterator rbegin(); //
-        reverse_iterator rend();   //
+    // iterateur constant
+    class const_iterator {
+    public:
+        explicit const_iterator() {}
+        const_iterator(const const_iterator&) {}
+        const_iterator(const iterator&) {}
+        const_iterator& operator++() { return *this; }
+        const_iterator operator++(int) { return *this; }
+        bool operator==(const_iterator other) const { return false; }
+        bool operator!=(const_iterator other) const { return false; }
+        const T& operator*() const { return dummy; };
+        //// birectionnel
+        // iterator& operator--();
+        // iterator operator--(int);
+        //// random access
+        // bool operator<(const iterator&)  const;
+        // bool operator<=(const iterator&) const;
+        // bool operator>(const iterator&)  const;
+        // bool operator>=(const iterator&) const;
+        // iterator& operator+=(const int n)
+        // iterator& operator-=(const int n)
+        // int& operator[](int n);
+        // const int& operator[](int n) const;
+    };
+    const_iterator cbegin() { return const_iterator(); }
+    const_iterator cend() { return const_iterator(); }
+    const_iterator begin() const { return const_iterator(); }
+    const_iterator end() const { return const_iterator(); }
 
-        class const_reverse_iterator {};
-        const_reverse_iterator rbegin() const;
-        const_reverse_iterator rend() const;
-        const_reverse_iterator crbegin() const;
-        const_reverse_iterator crend() const;
+    // methode necessitant des itérateurs
+    iterator insert( const_iterator pos, const T& value ) { return iterator(); }
+    iterator insert( const_iterator pos, T&& value ) { return iterator(); }
+    iterator insert( const_iterator pos, size_type count, const T& value ) { return iterator(); }
+    template< class InputIt > iterator insert( iterator pos, InputIt first, InputIt last) { return iterator(); }
+    iterator insert( const_iterator pos, std::initializer_list<T> ilist ) { return iterator(); }
 
+    iterator erase( const_iterator pos ) { return iterator(); }
+    iterator erase( const_iterator first, const_iterator last ) { return iterator(); }
+
+    // autres itérateurs
+    /*
+    class reverse_iterator {};
+    reverse_iterator rbegin(); //
+    reverse_iterator rend();   //
+
+    class const_reverse_iterator {};
+    const_reverse_iterator rbegin() const;
+    const_reverse_iterator rend() const;
+    const_reverse_iterator crbegin() const;
+    const_reverse_iterator crend() const;
+    */
 
 };
 
-void swap( deque &lhs, deque &rhs );
+void swap( deque &lhs, deque &rhs ) {};
 
+// afin de pouvoir renvoyer une référence vers un entier dans le code à remplacer
+int deque::dummy = 0;
 #endif //C_DEQUE_H

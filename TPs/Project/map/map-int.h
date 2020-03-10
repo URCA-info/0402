@@ -5,104 +5,107 @@
 
 class map {
 public:
-    // pour l'exemple
-    using Key = int;
-    using T = int;
-    class iterator;
-    class const_iterator;
-
     // ne pas toucher
+    using Key = char;
+    using T = int;
     using key_type = Key;
     using mapped_type = T;
     using value_type = std::pair<const Key, T>;
     using key_compare = std::less<Key>;
+    static value_type dummy;  // pour renvoyer une lvalue lorsque demandé
 
     // à implémenter
-    map();
-    template< class InputIt > map(InputIt first, InputIt last);
-    map( const map& other );
-    map( map&& other );
-    map( std::initializer_list<value_type> init);
-    ~map();
+    map() {}
+    template< class InputIt > map(InputIt first, InputIt last) {}
+    map( const map& other ) {}
+    map( map&& other ) {}
+    map( std::initializer_list<value_type> init) {}
+    ~map() {}
 
-    map& operator=( const map& other );
-    map& operator=( map&& other );
-    map& operator=( std::initializer_list<value_type> ilist );
+    map& operator=( const map& other ) { return *this; }
+    map& operator=( map&& other ) { return *this; }
+    map& operator=( std::initializer_list<value_type> ilist ) { return *this; }
 
-    mapped_type& at( const Key& key );
-    const mapped_type& at( const Key& key ) const;
+    mapped_type& at( const Key& key ) { return dummy.second; }
+    const mapped_type& at( const Key& key ) const { return dummy.second; }
 
-    mapped_type& operator[]( const Key& key );
-    mapped_type& operator[]( Key&& key );
+    mapped_type& operator[]( const Key& key ) { return dummy.second; }
+    mapped_type& operator[]( Key&& key ) { return dummy.second; }
 
-    bool empty() const;
+    bool empty() const { return true; }
+    size_t size() const { return 0; }
+    void clear() {}
 
-    size_t size() const;
+    size_t count( const Key& key ) const { return 0; }
+    bool contains( const Key& key ) const { return false; }
 
-    void clear();
+    void swap( map& other ) {}
 
-    std::pair<iterator,bool> insert( const value_type& value );
-    std::pair<iterator,bool> insert( value_type&& value );
-    iterator insert( iterator hint, const value_type& value );
-    iterator insert( iterator hint, value_type&& value );
-    template< class InputIt > void insert( InputIt first, InputIt last );
-    void insert( std::initializer_list<value_type> ilist );
+    friend bool operator==( const map& lhs, const map& rhs ) { return false; }
+    friend bool operator!=( const map& lhs, const map& rhs ) { return false; }
+    friend bool operator< ( const map& lhs, const map& rhs ) { return false; }
+    friend bool operator<=( const map& lhs, const map& rhs ) { return false; }
+    friend bool operator> ( const map& lhs, const map& rhs ) { return false; }
+    friend bool operator>=( const map& lhs, const map& rhs ) { return false; }
 
-    void erase( iterator pos );
-    void erase( iterator first, iterator last );
-    size_t erase( const key_type& key );
-
-    void swap( map& other );
-
-    size_t count( const Key& key ) const;
-
-    iterator find( const Key& key );
-    const_iterator find( const Key& key ) const;
-
-    bool contains( const Key& key ) const;
-
-    std::pair<iterator,iterator> equal_range( const Key& key );
-    iterator lower_bound( const Key& key );
-    iterator upper_bound( const Key& key );
-
-    friend bool operator==( const map& lhs, const map& rhs );
-    friend bool operator!=( const map& lhs, const map& rhs );
-    friend bool operator< ( const map& lhs, const map& rhs );
-    friend bool operator<=( const map& lhs, const map& rhs );
-    friend bool operator> ( const map& lhs, const map& rhs );
-    friend bool operator>=( const map& lhs, const map& rhs );
-
+    // iterateur classique
     class iterator {
     public:
-        explicit iterator();
-        iterator(const iterator&);
-        iterator& operator++();
-        iterator operator++(int);
-        bool operator==(iterator other) const;
-        bool operator!=(iterator other) const;
-        value_type& operator*() const;
+        explicit iterator() {}
+        iterator(const iterator&) {}
+        iterator& operator++() { return *this; }
+        iterator operator++(int) { return *this; }
+        bool operator==(iterator other) const { return false; }
+        bool operator!=(iterator other) const { return false; }
+        value_type& operator*() const { return dummy; };
         //// birectionnel
         // iterator& operator--();
         // iterator operator--(int);
-        //// random access
-        // bool operator<(const iterator&)  const;
-        // bool operator<=(const iterator&) const;
-        // bool operator>(const iterator&)  const;
-        // bool operator>=(const iterator&) const;
-        // iterator& operator+=(const int n)
-        // iterator& operator-=(const int n)
-        // int& operator[](int n);
-        // const int& operator[](int n) const;
     };
-    iterator begin();  //
-    iterator end();    //
+    iterator begin() { return iterator(); }
+    iterator end() { return iterator(); }
 
-    class const_iterator {};
-    const_iterator begin() const;
-    const_iterator end() const;
-    const_iterator cbegin() const;
-    const_iterator cend() const;
+    // iterateur constant
+    class const_iterator {
+    public:
+        explicit const_iterator() {}
+        const_iterator(const const_iterator&) {}
+        const_iterator(const iterator&) {}
+        const_iterator& operator++() { return *this; }
+        const_iterator operator++(int) { return *this; }
+        bool operator==(const_iterator other) const { return false; }
+        bool operator!=(const_iterator other) const { return false; }
+        const value_type& operator*() const { return dummy; };
+        //// birectionnel
+        // iterator& operator--();
+        // iterator operator--(int);
+    };
+    const_iterator cbegin() { return const_iterator(); }
+    const_iterator cend() { return const_iterator(); }
+    const_iterator begin() const { return const_iterator(); }
+    const_iterator end() const { return const_iterator(); }
 
+    // methodes utilisant les itérateurs
+
+    std::pair<iterator,bool> insert( const value_type& value ) { return std::make_pair(iterator(),false); }
+    std::pair<iterator,bool> insert( value_type&& value ) { return std::make_pair(iterator(),false); }
+    iterator insert( iterator hint, const value_type& value ) { return iterator(); }
+    iterator insert( iterator hint, value_type&& value ) { return iterator(); }
+    template< class InputIt > void insert( InputIt first, InputIt last ) {}
+    void insert( std::initializer_list<value_type> ilist ) {}
+
+    void erase( iterator pos ) {}
+    void erase( iterator first, iterator last ) {}
+    size_t erase( const key_type& key ) { return 0; }
+
+    iterator find( const Key& key ) { return iterator(); }
+    const_iterator find( const Key& key ) const { return const_iterator(); }
+    std::pair<iterator,iterator> equal_range( const Key& key ) { return std::make_pair(iterator(),iterator()); }
+    iterator lower_bound( const Key& key ) { return iterator(); }
+    iterator upper_bound( const Key& key ) { return iterator(); }
+
+    // autres itérateurs
+    /*
     class reverse_iterator {};
     reverse_iterator rbegin(); //
     reverse_iterator rend();   //
@@ -112,9 +115,12 @@ public:
     const_reverse_iterator rend() const;
     const_reverse_iterator crbegin() const;
     const_reverse_iterator crend() const;
+    */
 
 };
 
-void swap( map& lhs, map& rhs );
+void swap( map& lhs, map& rhs ) {}
 
+
+std::pair<const char, int>   map::dummy = {'a',10};
 #endif //C_MAP_H

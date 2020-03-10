@@ -6,92 +6,97 @@
 class set {
 public:
     // ne pas toucher
-    using Compare = std::less<int>;
-    class iterator;
+    using Key = int;
+    using Compare = std::less<Key>;
+    static Key dummy;  // pour renvoyer une lvalue lorsque demandé
 
     // prototype
-    set();
-    explicit set( const Compare& comp );
-    template< class InputIt > set( InputIt first, InputIt last);
-    template< class InputIt > set( InputIt first, InputIt last, const Compare& comp = Compare());
-    set( const set& other );
-    set( set&& other );
-    set( std::initializer_list<int> init );
-    set( std::initializer_list<int> init, const Compare& comp = Compare());
+    set() {}
+    // explicit set( const Compare& comp ); // pas de sens si Compare non template
+    template< class InputIt > set( InputIt first, InputIt last) {}
+    // template< class InputIt > set( InputIt first, InputIt last, const Compare& comp = Compare()); // pas de sens si Compare non template
+    set( const set& other ) {}
+    set( set&& other ) {}
+    set( std::initializer_list<Key> init ) {}
+    // set( std::initializer_list<Key> init, const Compare& comp = Compare()); // pas de sens si Compare non template
 
-    ~set();
+    ~set() {}
 
-    set& operator=( const set& other );
-    set& operator=( set&& other );
-    set& operator=( std::initializer_list<int> ilist );
+    set& operator=( const set& other ) { return *this; }
+    set& operator=( set&& other ) { return *this; }
+    set& operator=( std::initializer_list<Key> ilist ) { return *this; }
 
-    bool empty() const;
-    size_t size() const;
+    bool empty() const { return true; }
+    size_t size() const { return 0; }
 
-    void clear();
+    size_t count( const Key& value ) const { return 0; }
+    bool contains( const Key& value ) const { return false; }
 
-    std::pair<iterator,bool> insert( const int& value );
-    std::pair<iterator,bool> insert( int&& value );
-    iterator insert( iterator hint, const int& value );
-    iterator insert( iterator hint, int&& value );
-    template< class InputIt > void insert( InputIt first, InputIt last );
-    void insert( std::initializer_list<int> ilist );
+    void clear() {}
 
+    void swap( set& other ) {}
 
-    iterator erase( iterator pos );
-    void erase( iterator first, iterator last );
-    size_t erase( const int& key );
+    friend bool operator==( const set& lhs, const set& rhs ) { return false; }
+    friend bool operator!=( const set& lhs, const set& rhs ) { return false; }
+    friend bool operator< ( const set& lhs, const set& rhs ) { return false; }
+    friend bool operator<=( const set& lhs, const set& rhs ) { return false; }
+    friend bool operator> ( const set& lhs, const set& rhs ) { return false; }
+    friend bool operator>=( const set& lhs, const set& rhs ) { return false; }
 
-    void swap( set& other );
-
-    size_t count( const int& key ) const;
-
-    iterator find( const int& key );
-
-    bool contains( const int& key ) const;
-
-    std::pair<iterator,iterator> equal_range( const int& key );
-    iterator lower_bound( const int& key );
-    iterator upper_bound( const int& key );
-
-    friend bool operator==( const set& lhs, const set& rhs );
-    friend bool operator!=( const set& lhs, const set& rhs );
-    friend bool operator< ( const set& lhs, const set& rhs );
-    friend bool operator<=( const set& lhs, const set& rhs );
-    friend bool operator> ( const set& lhs, const set& rhs );
-    friend bool operator>=( const set& lhs, const set& rhs );
-
+    // iterateur classique
     class iterator {
     public:
-        explicit iterator();
-        iterator(const iterator&);
-        iterator& operator++();
-        iterator operator++(int);
-        bool operator==(iterator other) const;
-        bool operator!=(iterator other) const;
-        int& operator*() const;
+        explicit iterator() {}
+        iterator(const iterator&) {}
+        iterator& operator++() { return *this; }
+        iterator operator++(int) { return *this; }
+        bool operator==(iterator other) const { return false; }
+        bool operator!=(iterator other) const { return false; }
+        Key& operator*() const { return dummy; };
         //// birectionnel
         // iterator& operator--();
         // iterator operator--(int);
-        //// random access
-        // bool operator<(const iterator&)  const;
-        // bool operator<=(const iterator&) const;
-        // bool operator>(const iterator&)  const;
-        // bool operator>=(const iterator&) const;
-        // iterator& operator+=(const int n)
-        // iterator& operator-=(const int n)
-        // int& operator[](int n);
-        // const int& operator[](int n) const;
     };
-    iterator begin();  //
-    iterator end();    //
+    iterator begin() { return iterator(); }
+    iterator end() { return iterator(); }
 
-    class const_iterator {};
-    const_iterator begin() const;
-    const_iterator end() const;
-    const_iterator cbegin() const;
-    const_iterator cend() const;
+    // iterateur constant
+    class const_iterator {
+    public:
+        explicit const_iterator() {}
+        const_iterator(const const_iterator&) {}
+        const_iterator(const iterator&) {}
+        const_iterator& operator++() { return *this; }
+        const_iterator operator++(int) { return *this; }
+        bool operator==(const_iterator other) const { return false; }
+        bool operator!=(const_iterator other) const { return false; }
+        const Key& operator*() const { return dummy; };
+        //// birectionnel
+        // iterator& operator--();
+        // iterator operator--(int);
+    };
+    const_iterator cbegin() { return const_iterator(); }
+    const_iterator cend() { return const_iterator(); }
+    const_iterator begin() const { return const_iterator(); }
+    const_iterator end() const { return const_iterator(); }
 
+    // méthodes avec itérateur
+    std::pair<iterator,bool> insert( const Key& value ) { return std::make_pair(iterator(),false); }
+    std::pair<iterator,bool> insert( Key&& value ) { return std::make_pair(iterator(),false); }
+    template< class InputIt > void insert( InputIt first, InputIt last ) {}
+    void insert( std::initializer_list<Key> ilist ) {}
+
+    iterator erase( const_iterator pos ) { return iterator(); }
+    void erase( const_iterator first, const_iterator last ) {}
+    size_t erase( const Key& value ) { return 0; }
+
+    iterator find( const Key& value ) { return iterator(); }
+    std::pair<iterator,iterator> equal_range( const Key& value ) const { return std::make_pair(iterator(),iterator()); }
+    iterator lower_bound( const Key& value ) const  { return iterator(); }
+    iterator upper_bound( const Key& value ) const  { return iterator(); }
+
+    // autres itérateurs
+    /*
     class reverse_iterator {};
     reverse_iterator rbegin(); //
     reverse_iterator rend();   //
@@ -101,8 +106,11 @@ public:
     const_reverse_iterator rend() const;
     const_reverse_iterator crbegin() const;
     const_reverse_iterator crend() const;
+    */
 };
 
-void swap( set& lhs, set& rhs );
+void swap( set& lhs, set& rhs ) {};
 
+// afin de pouvoir renvoyer une référence vers un entier dans le code à remplacer
+int set::dummy = 0;
 #endif //C_SET_H
