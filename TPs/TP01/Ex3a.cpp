@@ -1,19 +1,19 @@
 #include <cstdio>
 #include <utility>
  
-// int fun(int  x)             { printf("call fun(int x)\n"); return x; }
-// int fun(const int  x)       { printf("call fun(const int x)\n"); return x; }
+int fun(int  x)             { printf("call fun(int x)\n"); return x; }
+int fun(const int  x)       { printf("call fun(const int x)\n"); return x; }
 
-// int fun(int &x)             { printf("call fun(int &x)\n"); return x; }
+int fun(int &x)             { printf("call fun(int &x)\n"); return x; }
 int fun(const int &x)       { printf("call fun(const int &x)\n"); return x; }
 
-// int fun(int &&x)            { printf("call fun(int &&x)\n"); return x; }
+int fun(int &&x)            { printf("call fun(int &&x)\n"); return x; }
 int fun(const int &&x)      { printf("call fun(const int &&x)\n"); return x; }
 
 int main() {
 	int  		a=3, &b=a;
 	const int	&c=a;
-	const int   &&d = std::move(a+3); // en pratique inutile si ce n'est pas avoir le bon type
+	const int   &&d = std::move(a+3); // en pratique inutile si ce n'est pour avoir le bon type
 	
 	printf("calling fun with %-11s => ","int");
 	fun(a);
