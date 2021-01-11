@@ -1,6 +1,11 @@
 #include <cstdio>
 #include <utility>
 
+// But: comprendre quels sont les différentes déclarations possibles et les différentes combinaisons d'appel.
+// A savoir: 
+// 1) décommenter une fonction, et regarder quels sont les appels qui fonctionnent
+// 2) essayer de décommenter deux fonctions, et voir quelles celles qui sont compatibles, et les appels qu'elles prennent en charge.
+
 // int fun(int *x)             { printf("call fun(int *x)\n"); return *x; }
 int fun(const int *x)       { printf("call fun(const int *x)\n"); return *x; }
 // int fun(int const *x)       { printf("call fun(int const *x)\n"); return *x; }
