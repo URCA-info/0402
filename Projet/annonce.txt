@@ -1,0 +1,21 @@
+Dans le cadre de ce module, un projet consistant en
+l'implémentation d'un conteneur C++ doit être réalisé.
+
+Vous devez choisir très rapidement votre projet parmi
+les possibilités suivantes:
+1/ deque
+2/ set
+3/ map
+Ces sujets sont ordonnés par difficulté croissante.
+
+Les horaires affectés pour les séances de TPs à partir
+de cette semaine sont destinés à travailler sur ce projet.
+Elles ne sont pas évidemment pas suffisantes pour terminer
+le projet.
+
+Afin d'attribuer les projets, il vous est demandé de me
+renvoyer par courriel le sujet que vous avez choisi. Il
+devra aussi contenir les noms des membres du binômes ainsi
+que votre numéro de groupe.
+
+pm
